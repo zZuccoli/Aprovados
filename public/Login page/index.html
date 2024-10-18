@@ -1,58 +1,76 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aprovados</title>
 
     <!--CSS-->
-    <link rel="stylesheet" href="css/style.css"> <!-- Este arquivo contém o CSS separado -->
-    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Este arquivo contém o CSS separado -->
+    <link rel="stylesheet" href="css/media.css" />
 
     <!--JS & jQuery-->
     <script type="text/javascript" src="js/script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-</head>
-<body>
-<div id="container">
-    <div class="box-login">
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="container">
+      <div class="box-login">
         <!-- Adicionando a imagem do logo acima da palavra "Aprovados" -->
-        <img src="../Aprovados-Logo.png" alt="Logo Aprovados" class="logo-img">
+        <img
+          src="../img/Aprovados-Logo.png"
+          alt="Logo Aprovados"
+          class="logo-img"
+        />
         <h1>Aprovados</h1>
         <h7>Seja bem-vindo de volta</h7>
 
         <div class="box">
-            <h2>Faça o seu login agora</h2>
-            <input type="text" name="username" id="username" placeholder="Username">
-            <input type="password" name="password" id="password" placeholder="Password">
+          <h2>Faça o seu login agora</h2>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Username"
+          />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+          />
 
-            <div id="error-message" class="error-message"></div>
+          <div id="error-message" class="error-message"></div>
 
-            <button id="login-button">Login</button>
+          <button id="login-button">Login</button>
 
-            <script>
-                $('#login-button').click(() => {
-                    const username = $('#username').val();
-                    const password = $('#password').val();
+          <script>
+            $("#login-button").click(() => {
+              const username = $("#username").val();
+              const password = $("#password").val();
 
-                    if (username === 'aprovados123' && password === '123456') {
-                        $('#error-message').hide();
-                        alert('Login realizado com sucesso!');
-                        // Redirecionar para a página inicial ou outra ação
-                        window.location.href = '../timer-pomodoro/index.html'; // Caminho relativo para a página de destino
-                    } else {
-                        $('#error-message').text('Usuário ou senha incorretos.').show();
-                    }
-                });
-            </script>
+              if (username === "aprovados123" && password === "123456") {
+                $("#error-message").hide();
+                alert("Login realizado com sucesso!");
+                // Redirecionar para a página inicial ou outra ação
+                window.location.href = "../timer-pomodoro/index.html"; // Caminho relativo para a página de destino
+              } else {
+                $("#error-message").text("Usuário ou senha incorretos.").show();
+              }
+            });
+          </script>
 
-            <a href="account.html">
-                <p>Criar uma conta</p>
-            </a>
+          <a href="account.html">
+            <p>Criar uma conta</p>
+          </a>
         </div>
+      </div>
     </div>
-</div>
-</body>
+  </body>
 </html>

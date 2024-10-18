@@ -1,0 +1,323 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+}
+
+p {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+nav {
+    background-color: #2a82da;
+    padding: 10px 20px;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand-logo {
+    color: #ecf0f1;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilos para o contêiner dos flashcards */
+.flashcard-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex: 1;
+    background-color: #ecf0f1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+/* Estilos para cada flashcard */
+.flashcard {
+    background-color: #fff;
+    width: 300px;
+    height: 200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    perspective: 1000px;
+    cursor: pointer;
+    margin: 10px;
+    position: relative;
+    box-sizing: border-box; /* Inclui padding e bordas no tamanho total */
+}
+
+/* Estilos para a rotação do flashcard */
+.flashcard-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flashcard.flip .flashcard-inner {
+    transform: rotateY(180deg);
+}
+
+/* Estilos para a frente e a parte de trás do flashcard */
+.flashcard .front,
+.flashcard .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box; /* Inclui padding no tamanho total */
+    overflow: hidden; /* Garante que o conteúdo não ultrapasse os limites */
+    text-align: center;
+    word-wrap: break-word; /* Garante que o texto longo quebre em múltiplas linhas */
+    overflow-wrap: break-word; /* Garante que o texto longo quebre em múltiplas linhas */
+}
+
+.flashcard .back {
+    background-color: #1b5997;
+    color: #fff;
+    transform: rotateY(180deg);
+}
+
+.flashcard .front h2,
+.flashcard .back p {
+    margin: 0; /* Remove margens para evitar espaço extra */
+    padding: 0; /* Remove padding para um ajuste mais preciso */
+    word-break: break-word; /* Garante que palavras longas sejam quebradas */
+}
+
+/* Estilos dos botões de controle */
+.controls {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    z-index: 20; /* Garante que a .controls fique acima da barra lateral */
+    position: relative; /* Necessário para que a .controls se sobreponha */
+}
+
+.controls button {
+    background-color: #2a82da;
+    color: #ecf0f1;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.controls button:hover {
+    background-color: #1d5f9a;
+}
+
+/* Estilos durante o arrasto do flashcard */
+.flashcard.dragging .flashcard-inner {
+    transform: none; /* Mantém a posição atual do flashcard */
+    transition: none; /* Remove a transição para que o flashcard não gire */
+}
+
+.flashcard.dragging .front {
+    opacity: 1; /* Mantém a opacidade normal durante o arrasto */
+}
+
+.flashcard.dragging .back {
+    opacity: 0; /* Esconde a parte de trás durante o arrasto */
+}
+
+.flashcard.dragging.flip .flashcard-inner {
+    transform: none; /* Mantém a posição atual do flashcard */
+    transition: none; /* Remove a transição para que o flashcard não gire */
+}
+
+.flashcard.dragging.flip .front {
+    opacity: 0; /* Esconde a frente durante o arrasto */
+}
+
+.flashcard.dragging.flip .back {
+    opacity: 1; /* Mantém a parte de trás visível durante o arrasto */
+}
+
+/* Estilos da barra lateral */
+.menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background: #f7f7f7;
+    z-index: 10; /* Menor que o z-index da .controls */
+    overflow: hidden;
+    box-shadow: 2px 0 18px rgba(0, 0, 0, 0.26);
+}
+
+/* Estilos da barra de menu superior */
+.menu-bar {
+    overflow: hidden;
+    left: 5em;
+    z-index: 5; /* Menor que o z-index da .controls */
+    width: 0;
+    height: 0;
+    transition: all 0.1s ease-in-out;
+}
+
+.menu li a {
+    display: inline-block;
+    text-indent: -500em;
+    height: 5em;
+    width: 5em;
+    text-decoration: none;
+    line-height: 5em;
+    text-align: center;
+    color: #72739f;
+    position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: background 0.1s ease-in-out;
+}
+
+.menu li a:before {
+    font-family: FontAwesome;
+    speak: none;
+    text-indent: 0em;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 1.4em;
+}
+
+.menu li a.clock:before {
+    content: "\f017";
+}
+
+.menu li a.calendar:before {
+    content: "\f133";
+}
+
+.menu li a.note:before {
+    content: "\f5d2";
+}
+
+.menu li a.logout:before {
+    content: "\f2f5";
+}
+
+.menu li a:hover {
+    background: #267fdd;
+    color: #fff;
+}
+
+/* Estilos da barra de menu superior */
+.menu-bar li a {
+    display: block;
+    height: 4em;
+    line-height: 4em;
+    text-align: center;
+    color: #72739f;
+    text-decoration: none;
+    position: relative;
+    font-family: verdana;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: background 0.1s ease-in-out;
+}
+
+.menu-bar li:first-child a {
+    height: 5em;
+    background: #267fdd;
+    color: #fff;
+    line-height: 5em;
+}
+
+@media all and (max-width: 500px) {
+    .menu {
+        height: 5em;
+        width: 100%;
+    }
+
+    .menu li {
+        display: inline-block;
+    }
+
+    .menu-bar li a {
+        width: 100%;
+    }
+
+    .menu-bar {
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        height: 0;
+    }
+}
+
+@media screen and (max-height: 34em) {
+    .menu li,
+    .menu-bar {
+        font-size: 70%;
+    }
+}
+
+@media screen and (max-height: 34em) and (max-width: 500px) {
+    .menu {
+        height: 3.5em;
+    }
+}
+
+.menu li a.about-us:before {
+    content: "\f0c0"; /* ícone de várias pessoas */
+}
+
+.menu li a.note:before {
+    content: "\f303"; /* ícone de anotações (pencil) */
+}
+
+.logo-img {
+    width: 80px; /* Tamanho do ícone */
+    height: auto;
+    display: block;
+    margin: 15px auto 0 auto; /* Remover a margem inferior para o texto ficar mais próximo da imagem */
+    position: relative; /* Necessário para que o texto fique dentro da imagem */
+}
+
+.menu .logo {
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Linha divisória abaixo do logo */
+    padding-bottom: 10px;
+}
+
+.logo-text {
+    text-align: center;
+    margin: -20px 0 5px 0; /* Margem negativa para mover o texto para cima da imagem do logo */
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+}

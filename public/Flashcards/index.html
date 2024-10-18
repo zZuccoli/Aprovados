@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Flashcards</title>
+</head>
+
+<body>
+
+
+  <!-- Barra lateral com ícones atualizados -->
+
+
+  <header>
+    <nav>
+      <div class="nav-wrapper">
+        <p href="#" class="brand-logo">Flashcards</p>
+      </div>
+    </nav>
+  </header>
+
+  <ul class="menu">
+    <!-- Adicionando o ícone do logo -->
+    <li class="logo">
+      <img src="../Aprovados-Logo.png" alt="Logo do site" class="logo-img">
+    </li>
+
+    <!-- Adicionando a palavra "Aprovados" abaixo do logo -->
+    <li class="logo-text">
+      <span class="logo-title">Aprovados</span>
+    </li>
+
+    <li title="Pomodoro"><a href="../timer-pomodoro/index.html" class="clock"><i class="fa-light fa-clock"></i> Pomodoro</a></li>
+    <li title="Calendário"><a href="../Calendario/index.html" class="calendar"><i class="fa-regular fa-calendar-days"></i> Calendário</a></li>
+    <li title="Flashcards"><a href="../Flashcards/index.html" class="note"><i class="fa-solid fa-pencil"></i> Flashcards</a></li>
+    <li title="about-us"><a href="https://aprovados-unifill.blogspot.com" class="about-us" target="_blank"><i class="fa-solid fa-users"></i> Sobre Nós</a></li>
+    <li title="Sair"><a href="../Login%20page/index.html" class="logout"><i class="fa-solid fa-right-from-bracket"></i> Sair</a></li>
+  </ul>
+
+  <ul class="menu-bar">
+    <li><a href="#" class="menu-button">Menu</a></li>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Profile</a></li>
+    <li><a href="#">Editorial</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+
+  <div class="flashcard-wrapper" id="flashcardWrapper">
+  </div>
+
+
+
+  <div class="controls">
+    <button id="addFlashcard">Adicionar</button>
+    <button id="editFlashcard">Editar</button>
+    <button id="deleteFlashcard">Excluir</button>
+  </div>
+
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>

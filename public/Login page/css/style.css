@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Handjet:wght@100..900&family=Oswald:wght@200..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Corrige o cálculo do padding/margin */
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #fff;
+}
+
+p {
+    cursor: pointer;
+    font-weight: 600;
+    color: #4C93E3;
+}
+
+h1 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 3em;
+    color: #1a2c48;
+    padding: 0 0 35px 15px;
+}
+
+h7 {
+    font-family: "Oswald", sans-serif;
+    font-size: 1.5em;
+    color: #4C93E3;
+    padding: 0 0 30px 15px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 0.8em;
+    color: #806D67;
+}
+
+input {
+    width: 80%;
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid silver;
+    outline: none;
+    font-weight: 600;
+    color: #1c1c1c;
+    padding-left: 3px;
+}
+
+button {
+    font-family: "Oswald", sans-serif;
+    cursor: pointer;
+    width: 120px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    background: #4C93E3;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: #afbbf2;
+    background: -moz-linear-gradient(60deg, #afbbf2 0%, #1a2c48 100%);
+    background: -webkit-linear-gradient(60deg, #afbbf2 0%, #1a2c48 100%);
+    background: linear-gradient(60deg, #afbbf2 0%, #1a2c48 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Removendo os retângulos brancos */
+#container {
+    width: 320px;
+    height: auto; /* Corrigido para se ajustar ao conteúdo */
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 6px -1px #000000;
+    box-shadow: 0px 0px 6px -1px #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.box-login {
+    font-family: "Oswald", sans-serif;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 10px;
+    border: 4px solid #000000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.box-login .box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#bubble {
+    cursor: pointer;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 1px solid #4C93E3;
+    background: #4C93E3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+    font-size: 14px;
+    display: none;
+}
+
+.logo-img {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+h7 {
+    font-size: 1em;
+    color: #555;
+}
+
+input {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #1a2c48;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #133360;
+}
+
+a {
+    display: block;
+    margin-top: 10px;
+    color: #1a2c48;
+}

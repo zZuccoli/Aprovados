@@ -1,0 +1,6 @@
+# Dependências do node
+node_modules/
+
+# Pasta de build do Next.js
+.next/
+

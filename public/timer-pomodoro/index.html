@@ -18,15 +18,14 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-<body>
-  <div id="visit-counter" style="
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 1.2em;
-    color: #FFF;">
-    Usuários que acessaram este site: <span id="counter-value">0</span>
-  </div>
+    <div id="visit-counter" style="
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 1.2em;
+      color: #FFF;">
+      Usuários que acessaram este site: <span id="counter-value">0</span>
+    </div>
 
     <div class="main">
       <div class="turns animated slideInDown">1/4</div>
@@ -56,7 +55,7 @@
             onchange="showResetMessage()"
           >
             <option value="15" selected>15 minutos</option>
-            <option value="25" selected>25 minutos</option>
+            <option value="25">25 minutos</option>
             <option value="35">35 minutos</option>
             <option value="45">45 minutos</option>
             <option value="55">55 minutos</option>
@@ -93,12 +92,7 @@
       <source src="notification.mp3" />
     </audio>
 
-    <script src="scripts.js"></script>
-    <script src="counter.js"></script>
-    <!-- Adicionando script para buscar o contador -->
-
     <ul class="menu">
-      <!-- Adicionando o ícone do logo -->
       <li class="logo">
         <img
           src="../img/Aprovados-Logo.png"
@@ -107,7 +101,6 @@
         />
       </li>
 
-      <!-- Adicionando a palavra "Aprovados" abaixo do logo -->
       <li class="logo-text">
         <span class="logo-title">Aprovados</span>
       </li>
@@ -149,5 +142,19 @@
       <li><a href="#">Editorial</a></li>
       <li><a href="#">About</a></li>
     </ul>
+
+    <script src="scripts.js"></script>
+    <script src="counter.js"></script>
+    <script>
+      // Função para atualizar o contador
+      async function updateCounter() {
+        const response = await fetch('/api/counter'); // Requisição para o contador
+        const data = await response.json(); // Obtenção do valor retornado
+        document.getElementById('counter-value').textContent = data.visits; // Exibição na página
+      }
+
+      // Chamada para incrementar o contador ao carregar a página
+      updateCounter();
+    </script>
   </body>
 </html>

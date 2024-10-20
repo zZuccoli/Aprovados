@@ -17,8 +17,17 @@
     ></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
-
   <body>
+<body>
+  <div id="visit-counter" style="
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.2em;
+    color: #FFF;">
+    Usuários que acessaram este site: <span id="counter-value">0</span>
+  </div>
+
     <div class="main">
       <div class="turns animated slideInDown">1/4</div>
 
@@ -85,6 +94,8 @@
     </audio>
 
     <script src="scripts.js"></script>
+    <script src="counter.js"></script>
+    <!-- Adicionando script para buscar o contador -->
 
     <ul class="menu">
       <!-- Adicionando o ícone do logo -->

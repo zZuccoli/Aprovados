@@ -1,336 +1,341 @@
 :root {
-	--timer-color: #729ddd;
+  --timer-color: #729ddd;
 }
 
-html, body {
-	height: 100%;
+html,
+body {
+  height: 100%;
 }
 
 body {
-	margin: 0;
-	font-family: Arial, Helvetica, sans-serif;
-	color: #e7e7e7;
-	background: #afbbf2;
-	background: -moz-linear-gradient(60deg, #afbbf2 0%, #1a2c48 100%);
-	background: -webkit-linear-gradient(60deg, #afbbf2 0%, #1a2c48 100%);
-	background: linear-gradient(60deg, #afbbf2 0%, #1a2c48 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorsrt='#3023ae', endColor='#c86dd7');
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #e7e7e7;
+  background: #afbbf2;
+  background: -moz-linear-gradient(60deg, #afbbf2 0%, #1a2c48 100%);
+  background: -webkit-linear-gradient(60deg, #afbbf2 0%, #1a2c48 100%);
+  background: linear-gradient(60deg, #afbbf2 0%, #1a2c48 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorsrt='#3023ae', endColor='#c86dd7');
 }
 
 button {
-	padding: 16px 32px;
-	font-size: 1em;
-	background-color: transparent;
-	border: 1px solid rgba(255, 255, 255, .1);
-	color: #e7e7e7;
-	border-radius: 5px;
-	cursor: pointer;
-	outline: none;
-	opacity: 100%;
-	transition: opacity 0.6s;
+  padding: 16px 32px;
+  font-size: 1em;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e7e7e7;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  opacity: 100%;
+  transition: opacity 0.6s;
 }
 
 button:hover {
-	opacity: 50%;
-	transition: opacity 0.6s;
+  opacity: 50%;
+  transition: opacity 0.6s;
 }
 
 .main {
-	display: flex;
-	flex-flow: column;
-	justify-content: center;
-	align-items: center;
-	height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .turns {
-	background-color: rgba(255, 255, 255, .2);
-	font-size: 1.5em;
-	padding: 12px 24px;
-	border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+  font-size: 1.5em;
+  padding: 12px 24px;
+  border-radius: 5px;
 }
 
 .time-container {
-	position: relative;
+  position: relative;
 }
 
-.time, .config, .config-tooltip-text {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	font-size: 3.2em;
+.time,
+.config,
+.config-tooltip-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3.2em;
 }
 
 .config {
-	top: 80%;
-	display: inline-block;
-	font-size: 1.3em;
-	cursor: pointer;
-	opacity: 30%;
-	transition: opacity 0.6s;
+  top: 80%;
+  display: inline-block;
+  font-size: 1.3em;
+  cursor: pointer;
+  opacity: 30%;
+  transition: opacity 0.6s;
 }
 
 .config-tooltip-text {
-	font-size: 0.6em;
-	font-weight: 600;
-	top: -7px;
-	opacity: 0%;
-	transition: opacity 0.6s;
+  font-size: 0.6em;
+  font-weight: 600;
+  top: -7px;
+  opacity: 0%;
+  transition: opacity 0.6s;
 }
 
-.config:hover, .config:hover .config-tooltip-text {
-	opacity: 80%;
-	transition: opacity 0.6s;
+.config:hover,
+.config:hover .config-tooltip-text {
+  opacity: 80%;
+  transition: opacity 0.6s;
 }
 
 .time-mode {
-	padding: 24px;
-	font-size: 1.5em;
+  padding: 24px;
+  font-size: 1.5em;
 }
 
 .circle-container {
-	transform: rotate(-90deg);
+  transform: rotate(-90deg);
 }
 
-.background-circle, .circle {
-	fill: none;
+.background-circle,
+.circle {
+  fill: none;
 }
 
 .background-circle {
-	stroke: rgba(255, 255, 255, .2);
-	stroke-width: 5;
+  stroke: rgba(255, 255, 255, 0.2);
+  stroke-width: 5;
 }
 
 .circle {
-	stroke: var(--timer-color);
-	stroke-width: 10;
-	stroke-dasharray: 597;
-	stroke-dashoffset: var(--dash-offset, 0);
-	transition: stroke-dashoffset 1s linear;
+  stroke: var(--timer-color);
+  stroke-width: 10;
+  stroke-dasharray: 597;
+  stroke-dashoffset: var(--dash-offset, 0);
+  transition: stroke-dashoffset 1s linear;
 }
 
 .dropdown-content {
-	display: flex;
-	flex-flow: column;
-	align-items: center;
-	margin-top: 10px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-top: 10px;
 }
 
 .select-options > select {
-	background-color: var(--timer-color);
-	border: 1px solid rgba(255, 255, 255, .1);
-	border-radius: 5px;
-	cursor: pointer;
-	outline: none;
-	opacity: 60%;
-	transition: opacity 0.6s;
+  background-color: var(--timer-color);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  opacity: 60%;
+  transition: opacity 0.6s;
 }
 
 .select-options > select:hover {
-	opacity: 100%;
-	transition: opacity 0.6s;
+  opacity: 100%;
+  transition: opacity 0.6s;
 }
 
 .config-message {
-	font-size: 0.6em;
-	font-weight: 600;
-	display: none;
+  font-size: 0.6em;
+  font-weight: 600;
+  display: none;
 }
 
 .config-message > span {
-	position: absolute;
-	transform: translate(-50%, -50%);
+  position: absolute;
+  transform: translate(-50%, -50%);
 }
 
 .config-message > span > a {
-	color: tomato;
+  color: tomato;
 }
 
-.menu, .menu-bar {
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	height: 100%;
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	background: #f7f7f7;
-	z-index: 10;
-	overflow: hidden;
-	box-shadow: 2px 0 18px rgba(0, 0, 0, 0.26);
+.menu,
+.menu-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background: #f7f7f7;
+  z-index: 10;
+  overflow: hidden;
+  box-shadow: 2px 0 18px rgba(0, 0, 0, 0.26);
 }
 
 .menu li a {
-	display: inline-block;
-	text-indent: -500em;
-	height: 5em;
-	width: 5em;
-	line-height: 5em;
-	text-align: center;
-	color: #72739f;
-	position: relative;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-	transition: background 0.1s ease-in-out;
+  display: inline-block;
+  text-indent: -500em;
+  height: 5em;
+  width: 5em;
+  line-height: 5em;
+  text-align: center;
+  color: #72739f;
+  position: relative;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: background 0.1s ease-in-out;
 }
 
 .menu li a:before {
-	font-family: FontAwesome;
-	speak: none;
-	text-indent: 0em;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	font-size: 1.4em;
+  font-family: FontAwesome;
+  speak: none;
+  text-indent: 0em;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 1.4em;
 }
 
 .menu li a.clock:before {
-	content: "\f017";
+  content: "\f017";
 }
 
 .menu li a.calendar:before {
-	content: "\f133";
+  content: "\f133";
 }
 
 .menu li a.note:before {
-	content: "\f303"; /* ícone de anotações (pencil) */
+  content: "\f303"; /* ícone de anotações (pencil) */
 }
 
 .menu li a.about-us:before {
-	content: "\f0c0"; /* ícone de várias pessoas */
+  content: "\f0c0"; /* ícone de várias pessoas */
 }
 
 .menu li a.logout:before {
-	content: "\f2f5";
+  content: "\f2f5";
 }
 
 .menu li a:hover {
-	background: #267fdd;
-	color: #fff;
+  background: #267fdd;
+  color: #fff;
 }
 
 .menu-bar {
-	overflow: hidden;
-	left: 5em;
-	z-index: 5;
-	width: 0;
-	height: 0;
-	transition: all 0.1s ease-in-out;
+  overflow: hidden;
+  left: 5em;
+  z-index: 5;
+  width: 0;
+  height: 0;
+  transition: all 0.1s ease-in-out;
 }
 
 .menu-bar li a {
-	display: block;
-	height: 4em;
-	line-height: 4em;
-	text-align: center;
-	color: #72739f;
-	text-decoration: none;
-	position: relative;
-	font-family: verdana;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-	transition: background 0.1s ease-in-out;
+  display: block;
+  height: 4em;
+  line-height: 4em;
+  text-align: center;
+  color: #72739f;
+  text-decoration: none;
+  position: relative;
+  font-family: verdana;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: background 0.1s ease-in-out;
 }
 
 .menu-bar li:first-child a {
-	height: 5em;
-	background: #267fdd;
-	color: #fff;
-	line-height: 5em;
+  height: 5em;
+  background: #267fdd;
+  color: #fff;
+  line-height: 5em;
 }
 
 .para {
-	color: #033f72;
-	padding-left: 100px;
-	font-size: 3em;
-	margin-bottom: 20px;
+  color: #033f72;
+  padding-left: 100px;
+  font-size: 3em;
+  margin-bottom: 20px;
 }
 
 .open {
-	width: 10em;
-	height: 100%;
+  width: 10em;
+  height: 100%;
 }
 
 @media all and (max-width: 500px) {
-	.container {
-		margin-top: 100px;
-	}
+  .container {
+    margin-top: 100px;
+  }
 
-	.menu {
-		height: 5em;
-		width: 100%;
-	}
+  .menu {
+    height: 5em;
+    width: 100%;
+  }
 
-	.menu li {
-		display: inline-block;
-	}
+  .menu li {
+    display: inline-block;
+  }
 
-	.menu-bar li a {
-		width: 100%;
-	}
+  .menu-bar li a {
+    width: 100%;
+  }
 
-	.menu-bar {
-		width: 100%;
-		left: 0;
-		bottom: 0;
-		height: 0;
-	}
+  .menu-bar {
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: 0;
+  }
 
-	.open {
-		width: 100%;
-		height: auto;
-	}
+  .open {
+    width: 100%;
+    height: auto;
+  }
 
-	.para {
-		padding-left: 5px;
-	}
+  .para {
+    padding-left: 5px;
+  }
 }
 
 @media screen and (max-height: 34em) {
-	.menu li,
-	.menu-bar {
-		font-size: 70%;
-	}
+  .menu li,
+  .menu-bar {
+    font-size: 70%;
+  }
 }
 
 @media screen and (max-height: 34em) and (max-width: 500px) {
-	.menu {
-		height: 3.5em;
-	}
+  .menu {
+    height: 3.5em;
+  }
 }
 
 .logo-img {
-	width: 80px; /* Diminuindo um pouco o tamanho do ícone */
-	height: auto;
-	display: block;
-	margin: 15px auto; /* Ajuste de margens para centralização e espaçamento */
+  width: 80px; /* Diminuindo um pouco o tamanho do ícone */
+  height: auto;
+  display: block;
+  margin: 15px auto; /* Ajuste de margens para centralização e espaçamento */
 }
 
 .menu .logo {
-	text-align: center;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Linha divisória abaixo do logo */
-	padding-bottom: 10px;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Linha divisória abaixo do logo */
+  padding-bottom: 10px;
 }
 
-
 .logo-img {
-	width: 80px; /* Tamanho do ícone */
-	height: auto;
-	display: block;
-	margin: 15px auto 0 auto; /* Remover a margem inferior para o texto ficar mais próximo da imagem */
-	position: relative; /* Necessário para que o texto fique dentro da imagem */
+  width: 80px; /* Tamanho do ícone */
+  height: auto;
+  display: block;
+  margin: 15px auto 0 auto; /* Remover a margem inferior para o texto ficar mais próximo da imagem */
+  position: relative; /* Necessário para que o texto fique dentro da imagem */
 }
 
 .logo-text {
-	text-align: center;
-	margin: -20px 0 5px 0; /* Margem negativa para mover o texto para cima, dentro da imagem */
-	position: relative;
+  text-align: center;
+  margin: -20px 0 5px 0; /* Margem negativa para mover o texto para cima, dentro da imagem */
+  position: relative;
 }
 
 .logo-title {
-	font-family: 'Roboto', sans-serif; /* Fonte elegante */
-	font-size: 1em; /* Tamanho da fonte */
-	font-weight: bold;
-	color: #1a2c48; /* Cor que combina com o gradiente do fundo */
+  font-family: "Roboto", sans-serif; /* Fonte elegante */
+  font-size: 1em; /* Tamanho da fonte */
+  font-weight: bold;
+  color: #1a2c48; /* Cor que combina com o gradiente do fundo */
 }
